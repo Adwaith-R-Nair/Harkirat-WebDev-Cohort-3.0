@@ -1,0 +1,9 @@
+body {
+    background-color: #1f1f1f;
+}
+
+.topLink {
+    color: gray;
+    cursor: pointer;
+    padding-left: 10px;
+}
