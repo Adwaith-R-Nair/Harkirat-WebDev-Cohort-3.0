@@ -1,59 +1,128 @@
-<html>
-	<title>
-		Visual Studio Code - Code Editor
-	</title>
-    <link rel="stylesheet" href="style.css">
-</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio Code Landing Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
 <body>
-	<div style = "color: white; padding-left: 300px; padding-right: 300px; display: flex; justify-content: space-between;">
-        <div>
-            <img src="https://code.visualstudio.com/favicon.ico" alt="VS Code Logo" width="24" style="padding-right: 5px;">
-            <span style="font-size: 18; color: white; font-weight: 550;">Visual Studio Code</span>
-            <span class = "topLink">Docs</span> 
-            <span class = "topLink">Updates</span> 
-            <span class = "topLink">Blog</span> 
-            <span class = "topLink">API</span> 
-            <span class = "topLink">Extensions</span> 
-            <span class = "topLink">FAQs</span>
-            <span class = "topLink">Learn</span>
+    <header>
+        <div class="navContainer">
+            <div class="flex">
+                <div class="verticalCenter">
+                    <img src="https://code.visualstudio.com/favicon.ico" width="20" height="20" class="topImage" />
+                </div>
+                <h3>Visual Studio Code</h3>
+                <div class="verticalCenter">
+                    <div>
+                        <a class="navLink" href="#">Docs</a>
+                        <a class="navLink" href="#">Updates</a>
+                        <a class="navLink" href="#">Blog</a>
+                        <a class="navLink" href="#">Api</a>
+                        <a class="navLink" href="#">Extensions</a>
+                        <a class="navLink" href="#">FAQ</a>
+                        <a class="navLink" href="#">Learn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="verticalCenter">
+                <div class="searchContainer">
+                    <input type="text" placeholder="Search Docs" class="searchInput" />
+                    <button class="downloadButton">Download</button>
+                </div>
+            </div>
         </div>
-		
-        <div>
-            <input type="text" placeholder="Search Docs">
-            <button>Download</button>
         </div>
-	</div>
-	<br/>
+    </header>
 
-    <center>
-	<div style = "color: gray;">
-		<a href="/">Version 1.82</a> is now available! Read about the new features and fixes from July.
-	</div>
-    </center>
+    <section>
+        <div class="banner">
+            <a href="#" class="bannerLink">Version 1.92</a> is now available! Read about the new features and fixes from
+            July.
+        </div>
+    </section>
 
-	<br/>
+    <section class="hero">
+        <div class="container">
+            <div class="heroContainer">
+                <div>
+                    <br /><br /><br />
+                    <span class="buttonBanner">
+                        Free. Built on open source. Runs anywhere.
+                    </span>
+                    <br /><br />
+                    <h2 style="text-align: left;">Code Editing. Redefined.</h2>
+                    <a href="#" class="cta-button">Download for MacOS</a>
+                </div>
+                <div>
+                    <img src="https://code.visualstudio.com/opengraphimg/opengraph-home.png" width="800px" />
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div style = "padding-top: 100px; padding-left: 200px; padding-right: 200px; display: flex; justify-content: space-between;">
-        <div style = "padding-top: 60px; padding-bottom: 60px;">
-            <div style = "color: gray">Free. Built on Open source. Runs everywhere.</div>
-            <br>
-            <div style = "color: white; font-size: 24px; font-weight: 550;">Code Editing.<br/> Redefined.</div>
-            <br>
+    <section class="language">
+        <div class="container">
             <div>
-                <button>Download for macOS</button>
+                <h2>Code in any language</h2>
+                <p>VS Code supports almost every major programming language. Several ship in the box, like JavaScript,
+                    TypeScript, CSS, and HTML, but extensions for others can be found in the VS Code Marketplace.</p>
             </div>
-            <br>
-            <div style = "color: gray">
-                <a href="/">Web</a>,
-                <a href="/">Insider's edition</a>, or
-                <a href="/">other platforms</a>
+            <div class="languagePanel">
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-js.png" alt="Javascript">
+                    <code class="verticalCenter">JavaScript</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-ts.png" alt="TypeScript">
+                    <code class="verticalCenter">TypeScript</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-python.png" alt="Python">
+                    <code class="verticalCenter">Python</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-cs.png" alt="C#">
+                    <code class="verticalCenter">C#</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-cpp.png" alt="C++">
+                    <code class="verticalCenter">C++</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-html.png" alt="HTML">
+                    <code class="verticalCenter">HTML</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-java.png" alt="Java">
+                    <code class="verticalCenter">Java</code>
+                </div>
+                <div class="flex"> 
+                    <img src="https://code.visualstudio.com/assets/home/language-json.png" alt="JSON">
+                    <code class="verticalCenter">JSON</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-php.png" alt="PHP">
+                    <code class="verticalCenter">PHP</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-markdown.png" alt="Markdown">
+                    <code class="verticalCenter">Markdown</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-powershell.png" alt="Powershell">
+                    <code class="verticalCenter">Powershell</code>
+                </div>
+                <div class="flex">
+                    <img src="https://code.visualstudio.com/assets/home/language-yaml.png" alt="YAML">
+                    <code class="verticalCenter">YAML</code>
+                </div>
             </div>
-            <br/>
-            <div style = "color: gray;">By using VS code, you agree to its <a href="/">license</a> and <a href="/">privacy statement</a>.</div>
         </div>
-
-        <div>
-            <img src="https://code.visualstudio.com/opengraphimg/opengraph-home.png" width="700">
-        </div>
-    </div>
+    </section>
 </body>
+
+</html>
