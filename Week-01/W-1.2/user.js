@@ -7,10 +7,19 @@ function greet(user){
     console.log("You are a " + user["gender"]);
 }
 
+function vote(user){
+    if (user.age >= 18) {
+        console.log("You can vote.");
+    } else {
+        console.log("You cannot vote yet.");
+    }
+}
+
 let user = {
     name : "Adwaith",
-    age : "22",
+    age : 22,
     gender : "Male"
 };
 
 greet(user);
+vote(user);
