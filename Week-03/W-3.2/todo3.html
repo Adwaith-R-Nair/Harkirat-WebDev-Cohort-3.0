@@ -32,11 +32,17 @@
             render();
         }
 
-        function createTodoComponent(todo) {
+        function deleteTodo(index) {
+            todos.splice(index, 1);
+            render();
+        }
+
+        function createTodoComponent(todo, index) {
             const div = document.createElement("div");
             const h1 = document.createElement("h1");
             const button = document.createElement("button");
             button.innerHTML = "Delete";
+            button.onclick = function() { deleteTodo(index); };
             h1.innerHTML = todo.title;
             div.append(h1);
             div.append(button);
@@ -46,7 +52,7 @@
         function render() {
             document.querySelector("#todos").innerHTML = "";
             for (let i = 0; i < todos.length; i++){
-                const element = createTodoComponent(todos[i]);
+                const element = createTodoComponent(todos[i], i);
                 document.querySelector("#todos").appendChild(element);
             }
         }
