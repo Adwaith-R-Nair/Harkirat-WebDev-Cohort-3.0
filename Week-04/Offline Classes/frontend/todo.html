@@ -14,7 +14,10 @@
 </body>
 <script>
     function createTodo() {
-        const input = document.querySelector('input');
+        const input = document.querySelector('input').value;
+        const newNode = document.createElement('div');
+        newNode.innerHTML = input;
+        document.querySelector('body').appendChild(newNode);
         
     }
 </script>
