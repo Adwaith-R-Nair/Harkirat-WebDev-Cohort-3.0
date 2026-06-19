@@ -1,6 +1,7 @@
 const express = require("express");
 
 const app = express();
+app.use(express.json());
 
 const todos = [];
 
@@ -9,6 +10,7 @@ app.get("/", function(req, res) {
 })
 
 app.post("/todo", function (req, res){
+    console.log("post todo was called");
     const todo = req.body.todo;
     todos.push(todo);
     res.json({
