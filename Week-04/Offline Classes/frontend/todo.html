@@ -11,14 +11,39 @@
         <input type="text" id="input">
         <button onclick="createTodo()">Add</button>
     </div>
+
+    <script>
+        function createTodo() {
+            const todo = document.querySelector('input').value;
+            const newNode = document.createElement('div');
+            newNode.innerHTML = todo;
+            document.querySelector('body').appendChild(newNode);
+            fetch("http://localhost:3000/todo", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    todo: todo
+                })
+            })
+            
+        }
+    </script>
+
+    <script>
+        fetch("http://localhost:3000/todos")
+            .then(function(response){
+                response.json()
+                    .then(function(data){
+                        data.todo.forEach(function(todo){
+                            const newDiv = document.createElement("div");
+                            newDiv.innerHTML = todo;
+                            document.getElementById("todos").appendChild(newDiv);
+                        });;
+                    })
+            })
+    </script>
+
 </body>
-<script>
-    function createTodo() {
-        const input = document.querySelector('input').value;
-        const newNode = document.createElement('div');
-        newNode.innerHTML = input;
-        document.querySelector('body').appendChild(newNode);
-        
-    }
-</script>
 </html>
