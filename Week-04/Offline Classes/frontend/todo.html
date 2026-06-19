@@ -11,12 +11,13 @@
         <input type="text" id="input">
         <button onclick="createTodo()">Add</button>
     </div>
+    <div id="todos"></div>
 
     <script>
         function createTodo() {
             const todo = document.querySelector('input').value;
             const newNode = document.createElement('div');
-            newNode.innerHTML = todo;
+            newNode.textContent = todo;
             document.querySelector('body').appendChild(newNode);
             fetch("http://localhost:3000/todo", {
                 method: "POST",
@@ -36,9 +37,9 @@
             .then(function(response){
                 response.json()
                     .then(function(data){
-                        data.todo.forEach(function(todo){
+                        data.todos.forEach(function(todo){
                             const newDiv = document.createElement("div");
-                            newDiv.innerHTML = todo;
+                            newDiv.textContent = todo;
                             document.getElementById("todos").appendChild(newDiv);
                         });;
                     })
