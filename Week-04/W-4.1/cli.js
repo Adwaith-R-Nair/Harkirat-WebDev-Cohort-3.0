@@ -7,7 +7,7 @@ program
     .description('CLI to do file based tasks')
     .version('0.8.0');
 
-program.command('count')
+program.command('count_w')
     .description('Count the number of words in a file')
     .argument('<file>', 'file to count')
     .action((file) => {
@@ -16,8 +16,20 @@ program.command('count')
                 console.log(err);
             } else {
                 const words = data.split(' ').length;
-                const lines = data.split('\n').length;
                 console.log(`There are ${words} words in ${file}`);
+            }
+        });
+    });
+
+program.command('count_l')
+    .description('Count the number of lines in a file')
+    .argument('<file>', 'file to count')
+    .action((file) => {
+        fs.readFile(file, "utf-8", (err, data) => {
+            if (err) {
+                console.log(err);
+            } else {
+                const lines = data.split('\n').length;
                 console.log(`There are ${lines} lines in ${file}`);
             }
         });
