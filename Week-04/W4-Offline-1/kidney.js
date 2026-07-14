@@ -42,27 +42,49 @@ app.post("/", function(req, res) {
 })
 
 app.put("/", function(req, res) {
-    for(let i = 0; i < users[0].kidneys.length; i++) {
-        users[0].kidneys[i].healthy = true;
+    if(atLeastOneUnhealthyKidney()) {
+        for(let i = 0; i < users[0].kidneys.length; i++) {
+            users[0].kidneys[i].healthy = true;
+        }
+        res.json({
+            msg: "All kidneys are now healthy"
+        })
+    } else {
+        res.status(411).json({
+            msg: "You have no bad kidneys"
+        })
     }
-    res.json({
-        msg: "All kidneys are now healthy"
-    })
 })
 
 app.delete("/", function(req, res) {
-    const newKidneys = [];
-    for(let i = 0; i < users[0].kidneys.length; i++){
-        if(users[0].kidneys[i].healthy) {
-            newKidneys.push({
-                healthy: true
-            })
+    if(atLeastOneUnhealthyKidney()) {
+        const newKidneys = [];
+        for(let i = 0; i < users[0].kidneys.length; i++){
+            if(users[0].kidneys[i].healthy) {
+                newKidneys.push({
+                    healthy: true
+                })
+            }
+        }
+        users[0].kidneys = newKidneys;
+        res.json({
+            msg: "Removed unhealthy kidneys"
+        })
+    } else {
+        res.status(411).json({
+            msg: "You have no bad kidneys"
+        })
+    }
+})
+
+function atLeastOneUnhealthyKidney() {
+    let flag = false;
+    for(let i = 0; i < users[0].kidneys.length; i++) {
+        if(!users[0].kidneys[i].healthy) {
+            flag = true;
         }
     }
-    users[0].kidneys = newKidneys;
-    res.json({
-        msg: "Removed unhealthy kidneys"
-    })
-})
+    return flag;
+}
 
 app.listen(3000);
